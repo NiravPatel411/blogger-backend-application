@@ -1,0 +1,55 @@
+
+entity ApplicationUser {
+	mobile String,
+    intro String,
+    profile TextBlob
+}
+
+entity Post {
+    title String,
+    metaTitle String,
+    slug String,
+    summary TextBlob,
+    publishedAt Instant,
+    content TextBlob
+}
+
+entity PostComment {
+    title String,
+    content TextBlob
+}
+
+entity Tag {
+	title String,
+    metaTitle String,
+    slug String,
+    content TextBlob
+}
+
+entity Category {
+    title String,
+    metaTitle String,
+    slug String,
+    content TextBlob
+}
+
+relationship ManyToOne {
+	Post{authorId} to ApplicationUser
+    Post{parentId} to Post
+    PostComment{postId} to Post
+    PostComment{parentId} to PostComment
+    Category{parentId} to Category
+}
+
+relationship ManyToMany {
+	Tag{postId} to Post{tagId}
+    Category{postId} to Post{categoryId}
+}
+
+paginate Post, PostComment with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
