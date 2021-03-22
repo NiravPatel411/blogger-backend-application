@@ -1,0 +1,43 @@
+{
+  "name": "Tag",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "metaTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slug",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "post",
+      "otherEntityRelationshipName": "tagId",
+      "relationshipName": "postId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210322122142",
+  "entityTableName": "tag",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

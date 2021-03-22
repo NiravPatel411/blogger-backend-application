@@ -1,0 +1,30 @@
+{
+  "name": "ApplicationUser",
+  "fields": [
+    {
+      "fieldName": "mobile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "intro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profile",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210322121842",
+  "entityTableName": "application_user",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
