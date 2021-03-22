@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="post">
+            <h2><span jhiTranslate="bloggerApp.post.detail.title">Post</span> {{ post.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bloggerApp.post.title">Title</span></dt>
+                <dd>
+                    <span>{{ post.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.metaTitle">Meta Title</span></dt>
+                <dd>
+                    <span>{{ post.metaTitle }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.slug">Slug</span></dt>
+                <dd>
+                    <span>{{ post.slug }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.summary">Summary</span></dt>
+                <dd>
+                    <span>{{ post.summary }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.publishedAt">Published At</span></dt>
+                <dd>
+                    <span>{{ post.publishedAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.content">Content</span></dt>
+                <dd>
+                    <span>{{ post.content }}</span>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.authorId">Author Id</span></dt>
+                <dd>
+                    <div *ngIf="post.authorIdId">
+                        <a [routerLink]="['/application-user', post.authorIdId, 'view']">{{ post.authorIdId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bloggerApp.post.parentId">Parent Id</span></dt>
+                <dd>
+                    <div *ngIf="post.parentIdId">
+                        <a [routerLink]="['/post', post.parentIdId, 'view']">{{ post.parentIdId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/post', post.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
