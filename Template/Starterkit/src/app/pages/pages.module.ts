@@ -29,6 +29,7 @@ import { ChartModule } from './chart/chart.module';
 import { FormModule } from './form/form.module';
 import { TablesModule } from './tables/tables.module';
 import { MapsModule } from './maps/maps.module';
+import {BlogComponent} from './blog/blog.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -36,7 +37,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [DashboardComponent, CalendarComponent, ChatComponent, KanbanComponent],
+  declarations: [DashboardComponent, CalendarComponent, ChatComponent, KanbanComponent, BlogComponent],
   imports: [
     CommonModule,
     FormsModule,

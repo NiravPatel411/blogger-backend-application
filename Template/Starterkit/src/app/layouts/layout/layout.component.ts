@@ -18,7 +18,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit() {
     // default settings
-    this.layoutType = LAYOUT_VERTICAL;
+    this.layoutType = LAYOUT_HORIZONTAL;
     // listen to event and change the layout, theme, etc
     this.eventService.subscribe('changeLayout', (layout) => {
       this.layoutType = layout;

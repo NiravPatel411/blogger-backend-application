@@ -433,6 +433,12 @@ export const MENU: MenuItem[] = [
                 ]
             },
         ]
+    },
+    {
+        id: 73,
+        label: 'MENUITEMS.BLOG.TEXT',
+        icon: 'ri-dashboard-line',
+        link: '/blogs'
     }
 ];
 
